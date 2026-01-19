@@ -29,7 +29,7 @@ struct test_gui {
 
 impl test_gui {
     fn new(cc: &eframe::CreationContext<'_>) -> Self {
-    
+    egui_extras::install_image_loaders(&cc.egui_ctx);
     let data = backup::load_users("data.txt");
     Self { 
         data,
